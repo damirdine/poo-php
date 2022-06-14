@@ -20,7 +20,7 @@ class Employe
 
     }
 
-    public function anciennete()
+    public function getAnciennete()
     {
         $dateEmbauche = new DateTime($this->dateEmbauche);
         $now = new DateTime();
@@ -28,13 +28,13 @@ class Employe
         return $anciennete;
     }
 
-    public function prime()
+    public function getPrime()
     {
         $pourcentageSurLeSalaire = 0.05;
         $pourcentageAnciennete = 0.02;
         $datePrime = "30-11";
         $actualDate = (new DateTime("30-11-2022"))->format('d-m');;
-        $prime = $this->salaire*($pourcentageSurLeSalaire+$pourcentageAnciennete*$this->anciennete());
+        $prime = $this->salaire*($pourcentageSurLeSalaire+$pourcentageAnciennete*$this->getAnciennete());
         $prime = round($prime,2);
         if ($actualDate == $datePrime){
             return $msg = " l’ordre de transfert de la prime de : $prime € pour $this->prenom a été envoyé à la banque.";

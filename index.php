@@ -12,7 +12,18 @@ $henry = new Employe('Jean','Henry','2019-04-12','alternant',14400,'formation');
 $employeList = array($damirdine,$said,$malik,$amani,$henry);
 $nbrEmployes = count($employeList);
 
-// Afficher par ordre alphabetique NOM
-sort($employeList);
+function getEmployeNbr($employeList){
+    return count($employeList);
+}
+function getSortAlphaByName($employeList){
+    sort($employeList);
+    return $employeList;
+}
+function getSortAlphaByService($employeList){
+    sort($employeList, );
+    return $employeList;
+}
 
-var_dump($employeList);
+
+
+var_dump(getSortAlphaByName($employeList));
