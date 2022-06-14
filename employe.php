@@ -16,12 +16,12 @@ class Employe
 
     public function __construct($nom,$prenom,$dateEmbauche,$fonction,$salaire,$service)
     {
-        $this->$nom = $nom;
-        $this->$prenom = $prenom;
-        $this->$dateEmbauche = $dateEmbauche;
-        $this->$fonction = $fonction;
-        $this->$salaire = $salaire;
-        $this->$service = $service;
+        $this->nom = $nom;
+        $this->prenom = $prenom;
+        $this->dateEmbauche = $dateEmbauche;
+        $this->fonction = $fonction;
+        $this->salaire = $salaire;
+        $this->service = $service;
 
     }
 
@@ -30,13 +30,13 @@ class Employe
         $dateEmbauche = new DateTime($this->dateEmbauche);
         $now = new DateTime();
         $anciennete = ($now->diff($dateEmbauche))->format('%r%y years');
-        return $dateEmbauche;
+        return $anciennete;
     }
     
 }
 
 
-$damirdine = new Employe('ALI SOILIHI','Damirdine','15/03/2021','stagiaire',0,'formation');
+$damirdine = new Employe('ALI SOILIHI','Damirdine','2021-04-12','stagiaire',0,'formation');
 var_dump($damirdine->_anciennete());
 
 ?>
