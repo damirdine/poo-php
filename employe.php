@@ -25,18 +25,29 @@ class Employe
 
     }
 
-    public function _anciennete()
+    public function anciennete()
     {
         $dateEmbauche = new DateTime($this->dateEmbauche);
         $now = new DateTime();
-        $anciennete = ($now->diff($dateEmbauche))->format('%r%y years');
+        $anciennete = ($now->diff($dateEmbauche))->format('%y');
         return $anciennete;
+    }
+
+    public function prime()
+    {
+        $pourcentageSurLeSalaire = 0.05;
+        $pourcentageAnciennete = 0.02;
+        $datePrime = "30-11";
+        $actiualDate = (new DateTime("30-11-2022"))->format('d-m');;
+        $prime = $this->salaire*($pourcentageSurLeSalaire+$pourcentageAnciennete*$this->anciennete());
+        $prime = round($prime,2);
+        if ($actiualDate == $datePrime){
+            return $msg = " l’ordre de transfert de la prime de : $prime € pour $this->prenom a été envoyé à la banque.";
+        }
+        return $prime;
     }
     
 }
-
-
-$damirdine = new Employe('ALI SOILIHI','Damirdine','2021-04-12','stagiaire',0,'formation');
-var_dump($damirdine->_anciennete());
-
+$damirdine = new Employe('ALI SOILIHI','Damirdine','2019-04-12','stagiaire',26000,'formation');
+var_dump($damirdine->prime());
 ?>
