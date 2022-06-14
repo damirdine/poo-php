@@ -41,6 +41,18 @@ class Employe
         }
         return $prime;
     }
+    public static function sortByNom($a, $b)
+    {
+        return strtolower($a->nom) <=> strtolower($b->nom);
+    }
+    public static function sortByPrenom($a, $b)
+    {
+        return strtolower($a->prenom) <=> strtolower($b->prenom);
+    }
+    public static function sortByService($a, $b)
+    {
+        return strtolower($a->service) <=> strtolower($b->service);
+    }
     
 }
 ?>
