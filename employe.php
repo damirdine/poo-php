@@ -38,16 +38,20 @@ class Employe
         $pourcentageSurLeSalaire = 0.05;
         $pourcentageAnciennete = 0.02;
         $datePrime = "30-11";
-        $actiualDate = (new DateTime("30-11-2022"))->format('d-m');;
+        $actualDate = (new DateTime("30-11-2022"))->format('d-m');;
         $prime = $this->salaire*($pourcentageSurLeSalaire+$pourcentageAnciennete*$this->anciennete());
         $prime = round($prime,2);
-        if ($actiualDate == $datePrime){
+        if ($actualDate == $datePrime){
             return $msg = " l’ordre de transfert de la prime de : $prime € pour $this->prenom a été envoyé à la banque.";
         }
         return $prime;
     }
     
 }
-$damirdine = new Employe('ALI SOILIHI','Damirdine','2019-04-12','stagiaire',26000,'formation');
-var_dump($damirdine->prime());
+$damirdine = new Employe('ALI SOILIHI','Damirdine','2019-04-12','stagiaire',0,'formation');
+$said = new Employe('Mohamed','Said','2016-07-11','Tetch Lead',48000,'IT');
+$malik = new Employe('Ziad','Malik','2021-03-06','Gestionnaire de paye',28750,'RH');
+$amani = new Employe('Assoumani','Amani','2017-05-17','Ingénieur logiciel',42000,'IT');
+$henry = new Employe('Jean','Henry','2019-04-12','alternant',14400,'formation');
+var_dump($malik->prime());
 ?>
