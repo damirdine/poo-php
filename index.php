@@ -28,8 +28,13 @@ function getSortAlphaByService($employeList){
     return $employeList;
 }
 
-function getTotalAmmount($employeList){
-    return $employeList;
+function getPayroll($employeList){
+    $payrollArray=[];
+    foreach($employeList as $employe){
+        array_push($payrollArray,$employe->payroll());
+    }
+    $payroll = array_sum($payrollArray);
+    return $payroll;
 }
 
-var_dump($nbrEmployes);
+var_dump(getPayroll($employeList));

@@ -28,6 +28,9 @@ class Employe
         $anciennete = ($now->diff($dateEmbauche))->format('%y');
         return $anciennete;
     }
+    public function getSalaire(){
+        return $this->salaire;
+    }
 
     public function getPrime()
     {
@@ -37,13 +40,10 @@ class Employe
         $actualDate = (new DateTime("30-11-2022"))->format('d-m');;
         $prime = $this->salaire*($pourcentageSurLeSalaire+$pourcentageAnciennete*$this->getAnciennete());
         $prime = round($prime,2);
-        if ($actualDate == $datePrime){
-            return $msg = " l’ordre de transfert de la prime de : $prime € pour $this->prenom a été envoyé à la banque.";
-        }
+        // if ($actualDate == $datePrime){
+        //     return $msg = " l’ordre de transfert de la prime de : $prime € pour $this->prenom a été envoyé à la banque.";
+        // }
         return $prime;
-    }
-    public function getNbrOfEmployes(){
-        return Employe::$nbr;
     }
     public static function sortByNomPrenom($a, $b)
     {
@@ -63,6 +63,8 @@ class Employe
         }
         return strtolower($a->service) <=> strtolower($b->service);
     }
-    
+    public function payroll(){
+        return $this->salaire+$this->getPrime();
+    }
 }
 ?>
