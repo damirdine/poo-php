@@ -54,7 +54,7 @@ class Employe
         }
         return $prime;
     }
-    public function getHolidayVouchers(){
+    public function getHolidayCheck(){
         $minYearForHV = 1;
         if($this->getSeniority() <= $minYearForHV){
             return false;

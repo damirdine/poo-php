@@ -27,4 +27,4 @@ function getPayroll($employeList){
     return $payroll;
 }
 
-var_dump($malik->getHolidayVouchers());
+var_dump($malik->getHolidayCheck());
