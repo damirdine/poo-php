@@ -21,6 +21,10 @@ class Employe
         Employe::$nbr++;
     }
 
+    public static function getNbrOfEmployes(){
+        return Employe::$nbr;
+    }
+    
     public function getAnciennete()
     {
         $dateEmbauche = new DateTime($this->dateEmbauche);

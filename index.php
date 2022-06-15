@@ -12,17 +12,13 @@ $brad = new Employe('Jean','Brad','2019-04-12','Ingénieur logiciel',14400,'IT')
 
 $employeList = array($damirdine,$said,$malik,$amani,$henry,$brad);
 
-$nbrEmployes = count($employeList);
-
-function getEmployeNbr($employeList){
-    return count($employeList);
-}
-
+$nbrOfEmployes = Employe::getNbrOfEmployes();
 
 function getSortAlphaByNomPrenom($employeList){
     usort($employeList,[Employe::class, "sortByNomPrenom"]);
     return $employeList;
 }
+
 function getSortAlphaByService($employeList){
     usort($employeList,[Employe::class, "sortByService"]);
     return $employeList;
@@ -37,4 +33,4 @@ function getPayroll($employeList){
     return $payroll;
 }
 
-var_dump(getPayroll($employeList));
+var_dump($nbrOfEmployes);
