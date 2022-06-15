@@ -1,6 +1,7 @@
 <?php 
 require_once ('./classes/agency.php');
 require_once ('./classes/employe.php');
+require_once ('./classes/family.php');
 
 //voir note pour solution plus generique
 
@@ -27,4 +28,4 @@ function getPayroll($employeList){
     return $payroll;
 }
 
-var_dump($malik->getHolidayCheck());
+var_dump($child1);
