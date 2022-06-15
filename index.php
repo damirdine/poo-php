@@ -1,5 +1,5 @@
 <?php 
-require_once 'employe.php';
+require_once './classes/employe.php';
 
 $damirdine = new Employe('ALI SOILIHI','Damirdine','2019-04-12','stagiaire',0,'formation');
 $said = new Employe('Mohamed','Said','2016-07-11','Tetch Lead',48000,'IT');
@@ -14,8 +14,8 @@ $employeList = array($damirdine,$said,$malik,$amani,$henry,$brad);
 
 $nbrOfEmployes = Employe::getNbrOfEmployes();
 
-function getSortAlphaByNomPrenom($employeList){
-    usort($employeList,[Employe::class, "sortByNomPrenom"]);
+function getSortAlphaByNameFirstname($employeList){
+    usort($employeList,[Employe::class, "sortByNameFirstname"]);
     return $employeList;
 }
 
@@ -33,4 +33,4 @@ function getPayroll($employeList){
     return $payroll;
 }
 
-var_dump($nbrOfEmployes);
+var_dump(getPayroll($employeList));

@@ -10,4 +10,4 @@ Nous sommes dans un contexte d’une entreprise d’envergure nationale. Celle-c
 - [x] Afficher le nombre d’employés de l’entreprise.
 - [x] Afficher toutes les informations des employés par ordre alphabétique sur le nom et le prénom.
 - [x] Afficher toutes les informations des employés par ordre alphabétique de service, nom et prénom. 
-- [x] Afficher le montant total du coût que représentent tous les salariés (masse salariale) calculé à partir des salaire et des primes.
+- [x] Afficher le montant total du coût que représentent tous les salariés (masse salariale) calculé à partir des salaryet des primes.
