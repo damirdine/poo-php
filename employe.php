@@ -8,6 +8,7 @@ class Employe
     private  $fonction="";
     private  int $salaire;
     private  $service;
+    private static $nbr;
 
     public function __construct($nom,$prenom,$dateEmbauche,$fonction,$salaire,$service)
     {
@@ -17,7 +18,7 @@ class Employe
         $this->fonction = $fonction;
         $this->salaire = $salaire;
         $this->service = $service;
-
+        Employe::$nbr++;
     }
 
     public function getAnciennete()
@@ -41,16 +42,25 @@ class Employe
         }
         return $prime;
     }
-    public static function sortByNom($a, $b)
+    public function getNbrOfEmployes(){
+        return Employe::$nbr;
+    }
+    public static function sortByNomPrenom($a, $b)
     {
+        if ($a->nom===$b->nom){
+            return strtolower($a->prenom) <=> strtolower($b->prenom);
+        }
         return strtolower($a->nom) <=> strtolower($b->nom);
     }
-    public static function sortByPrenom($a, $b)
-    {
-        return strtolower($a->prenom) <=> strtolower($b->prenom);
-    }
+
     public static function sortByService($a, $b)
     {
+        if ($a->service===$b->service){
+            if ($a->nom===$b->nom){
+                return strtolower($a->prenom) <=> strtolower($b->prenom);
+            }
+            return strtolower($a->nom) <=> strtolower($b->nom);
+        }
         return strtolower($a->service) <=> strtolower($b->service);
     }
     
