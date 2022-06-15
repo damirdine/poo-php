@@ -26,7 +26,7 @@ class Employe
         return Employe::$nbr;
     }
     
-    public function getAnciennete()
+    public function getSeniority()
     {
         $dateHiring = new DateTime($this->dateHiring);
         $now = new DateTime();
@@ -38,7 +38,7 @@ class Employe
     }
 
     public function getAgency(){
-        return $this->agency->getName();
+        return $this->agency;
     }
 
     public function getPrime()
@@ -46,13 +46,20 @@ class Employe
         $primeSalaryPerCent= 0.05;
         $primeSalaryPerYearOfSeniority = 0.02;
         $datePrime = "30-11";
-        $actualDate = (new DateTime("30-11-2022"))->format('d-m');;
-        $prime = $this->salary*($primeSalaryPerCent+$primeSalaryPerYearOfSeniority*$this->getAnciennete());
+        $actualDate = (new DateTime())->format('d-m');;
+        $prime = $this->salary*($primeSalaryPerCent+$primeSalaryPerYearOfSeniority*$this->getSeniority());
         $prime = round($prime,2);
-        // if ($actualDate == $datePrime){
-        //     return $getPrime = " l’ordre de transfert de la prime de : $prime € pour $this->firstname a été envoyé à la banque.";
-        // }
+        if ($actualDate == $datePrime){
+            return $getPrime = " l’ordre de transfert de la prime de : $prime € pour $this->firstname a été envoyé à la banque.";
+        }
         return $prime;
+    }
+    public function getHolidayVouchers(){
+        $minYearForHV = 1;
+        if($this->getSeniority() <= $minYearForHV){
+            return false;
+        }
+        return true;
     }
     public static function sortByNameFirstname($a, $b)
     {
@@ -80,7 +87,7 @@ class Employe
 
 $damirdine = new Employe('ALI SOILIHI','Damirdine','2019-04-12','stagiaire',0,'formation',$rouenAgency);
 $said = new Employe('Mohamed','Said','2016-07-11','Tetch Lead',48000,'IT',$rouenAgency);
-$malik = new Employe('Ziad','Malik','2021-03-06','Gestionnaire de paye',28750,'RH',$rouenAgency);
+$malik = new Employe('Ziad','Malik','2022-03-06','Gestionnaire de paye',28750,'RH',$rouenAgency);
 $amani = new Employe('Assoumani','Amani','2017-05-17','Ingénieur logiciel',42000,'IT',$rouenAgency);
 $henry = new Employe('Jean','Henry','2019-04-12','alternant',14400,'IT',$rouenAgency);
 $brad = new Employe('Jean','Brad','2019-04-12','Ingénieur logiciel',14400,'IT',$rouenAgency);

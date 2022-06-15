@@ -1,6 +1,6 @@
 <?php 
-require_once './classes/agency.php';
-require_once './classes/employe.php';
+require_once ('./classes/agency.php');
+require_once ('./classes/employe.php');
 
 //voir note pour solution plus generique
 
@@ -27,4 +27,4 @@ function getPayroll($employeList){
     return $payroll;
 }
 
-var_dump($damirdine->getAgency());
+var_dump($malik->getHolidayVouchers());
