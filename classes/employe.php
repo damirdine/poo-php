@@ -45,7 +45,7 @@ class Employe
         $prime = $this->salary*($primeSalaryPerCent+$primeSalaryPerYearOfSeniority*$this->getAnciennete());
         $prime = round($prime,2);
         // if ($actualDate == $datePrime){
-        //     return $msg = " l’ordre de transfert de la prime de : $prime € pour $this->firstname a été envoyé à la banque.";
+        //     return $getPrime = " l’ordre de transfert de la prime de : $prime € pour $this->firstname a été envoyé à la banque.";
         // }
         return $prime;
     }
@@ -71,4 +71,12 @@ class Employe
         return $this->salary+$this->getPrime();
     }
 }
+
+$damirdine = new Employe('ALI SOILIHI','Damirdine','2019-04-12','stagiaire',0,'formation');
+$said = new Employe('Mohamed','Said','2016-07-11','Tetch Lead',48000,'IT');
+$malik = new Employe('Ziad','Malik','2021-03-06','Gestionnaire de paye',28750,'RH');
+$amani = new Employe('Assoumani','Amani','2017-05-17','Ingénieur logiciel',42000,'IT');
+$henry = new Employe('Jean','Henry','2019-04-12','alternant',14400,'IT');
+$brad = new Employe('Jean','Brad','2019-04-12','Ingénieur logiciel',14400,'IT');
+
 ?>
