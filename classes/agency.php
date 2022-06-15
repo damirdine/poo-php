@@ -12,7 +12,11 @@ class Agency {
         $this->postalCode = $postalCode;
         $this->city = $city;
     }
+    public function getName()
+    {
+        return $this->name;
+    }
 
 };
 
-$rouenAgency = new Agency('afpa','2 rue du jean','76300','Rouen');
+$rouenAgency = new Agency('afpa Rouen','2 rue du jean','76300','Rouen');

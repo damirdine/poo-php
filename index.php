@@ -27,4 +27,4 @@ function getPayroll($employeList){
     return $payroll;
 }
 
-var_dump($damirdine);
+var_dump($damirdine->getAgency());

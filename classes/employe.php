@@ -1,5 +1,4 @@
 <?php
-
 class Employe
 {
     private  $name = "";
@@ -8,9 +7,10 @@ class Employe
     private  $fonction="";
     private  int $salary;
     private  $service;
+    private  $agency;
     private static $nbr;
 
-    public function __construct($name,$firstname,$dateHiring,$fonction,$salary,$service)
+    public function __construct($name,$firstname,$dateHiring,$fonction,$salary,$service,$agency)
     {
         $this->name = $name;
         $this->firstname = $firstname;
@@ -18,6 +18,7 @@ class Employe
         $this->fonction = $fonction;
         $this->salary= $salary;
         $this->service = $service;
+        $this->agency = $agency;
         Employe::$nbr++;
     }
 
@@ -34,6 +35,10 @@ class Employe
     }
     public function getSalaire(){
         return $this->salaire;
+    }
+
+    public function getAgency(){
+        return $this->agency->getName();
     }
 
     public function getPrime()
@@ -67,16 +72,16 @@ class Employe
         }
         return strtolower($a->service) <=> strtolower($b->service);
     }
+
     public function payroll(){
         return $this->salary+$this->getPrime();
     }
 }
 
-$damirdine = new Employe('ALI SOILIHI','Damirdine','2019-04-12','stagiaire',0,'formation');
-$said = new Employe('Mohamed','Said','2016-07-11','Tetch Lead',48000,'IT');
-$malik = new Employe('Ziad','Malik','2021-03-06','Gestionnaire de paye',28750,'RH');
-$amani = new Employe('Assoumani','Amani','2017-05-17','Ingénieur logiciel',42000,'IT');
-$henry = new Employe('Jean','Henry','2019-04-12','alternant',14400,'IT');
-$brad = new Employe('Jean','Brad','2019-04-12','Ingénieur logiciel',14400,'IT');
-
+$damirdine = new Employe('ALI SOILIHI','Damirdine','2019-04-12','stagiaire',0,'formation',$rouenAgency);
+$said = new Employe('Mohamed','Said','2016-07-11','Tetch Lead',48000,'IT',$rouenAgency);
+$malik = new Employe('Ziad','Malik','2021-03-06','Gestionnaire de paye',28750,'RH',$rouenAgency);
+$amani = new Employe('Assoumani','Amani','2017-05-17','Ingénieur logiciel',42000,'IT',$rouenAgency);
+$henry = new Employe('Jean','Henry','2019-04-12','alternant',14400,'IT',$rouenAgency);
+$brad = new Employe('Jean','Brad','2019-04-12','Ingénieur logiciel',14400,'IT',$rouenAgency);
 ?>
