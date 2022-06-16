@@ -1,25 +1,21 @@
 <?php
-class ChildList{
+class Child{
     private $name;
     private $age;
     
-    public function __construct($parents,$age)
+    public function __construct($name,$age)
     {
-        $this->parents = $parents;
+        $this->name = $name;
         $this->age = $age;
     }
     public function getAge()
     {
         return $this->age;
     }
+    public function getName()
+    {
+        return $this->age;
+    }
     
 }
-$damirdineChilds = new ChildList(
-    $child1,$child2,$child3
-);
-
-$damirdineChilds = new ChildList(
-    $child1,$child2,$child3
-);
-
 ?>

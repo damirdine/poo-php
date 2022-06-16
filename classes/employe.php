@@ -8,10 +8,10 @@ class Employe
     private  int $salary;
     private  $service;
     private  $agency;
-    private $childList;
+    private  $childList = [];
     private static $nbr;
 
-    public function __construct($name, $firstname, $dateHiring, $fonction, $salary, $service, $agency,$child)
+    public function __construct($name, $firstname, $dateHiring, $fonction, $salary, $service,$agency, $childList)
     {
         $this->name = $name;
         $this->firstname = $firstname;
@@ -20,26 +20,26 @@ class Employe
         $this->salary = $salary;
         $this->service = $service;
         $this->agency = $agency;
-        $this->childsList = array_push($this->childsList,$child);
+        $this->childList = $childList;
         Employe::$nbr++;
     }
+    
 
     public static function getNbrOfEmployes()
     {
         return Employe::$nbr;
     }
-    public function getChildsList()
+    public function getChildList()
     {
-        return $this->childList;
+            return $this->childList;
     }
-
 
     public function getSeniority()
     {
         $dateHiring = new DateTime($this->dateHiring);
         $now = new DateTime();
-        $anciennete = ($now->diff($dateHiring))->format('%y');
-        return $anciennete;
+        $seniority = ($now->diff($dateHiring))->format('%y');
+        return $seniority;
     }
     public function getSalaire()
     {
@@ -74,11 +74,8 @@ class Employe
     }
     public function getChristmasCheck()
     {
-        $minYearForHV = 1;
-        if ($this->getSeniority() <= $minYearForHV) {
-            return false;
-        }
-        return true;
+        $ChristmasCheckAmount = count($this->childList);
+        return $ChristmasCheckAmount;
     }
     public static function sortByNameFirstname($a, $b)
     {
@@ -104,10 +101,3 @@ class Employe
         return $this->salary + $this->getPrime();
     }
 }
-
-$damirdine = new Employe('ALI SOILIHI', 'Damirdine', '2019-04-12', 'stagiaire', 0, 'formation', $rouenAgency,$damirdineFamily);
-$said = new Employe('Mohamed', 'Said', '2016-07-11', 'Tetch Lead', 48000, 'IT', $rouenAgency,null);
-$malik = new Employe('Ziad', 'Malik', '2022-03-06', 'Gestionnaire de paye', 28750, 'RH', $rouenAgency,null);
-$amani = new Employe('Assoumani', 'Amani', '2017-05-17', 'Ingénieur logiciel', 42000, 'IT', $rouenAgency,null);
-$henry = new Employe('Jean', 'Henry', '2019-04-12', 'alternant', 14400, 'IT', $rouenAgency,null);
-$brad = new Employe('Jean', 'Brad', '2019-04-12', 'Ingénieur logiciel', 14400, 'IT', $rouenAgency,null);
