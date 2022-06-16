@@ -49,4 +49,4 @@ function getPayroll($employeList){
 }
 
 
-var_dump($amani->getPrime());
+var_dump($amani->getAgency()->haveRestaurant());
