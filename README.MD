@@ -30,7 +30,7 @@ Pour utiliser l'application :
 #### Gérer les agences de l'entreprise.
 - [x] Écrire une nouvelle classe Agence qui contient tous ces éléments
 - [x] Modifier la classe Employé afin que celui-ci soit rattaché à une agence :
-    - `$emplyoe->getAgency()`
+    - `$employe->getAgency()`
 
 #### Gérer restauration par agence.
 - [x] Modifier la classe Agence pour gérer les modes de restauration.
