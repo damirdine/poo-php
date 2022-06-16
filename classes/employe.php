@@ -41,9 +41,9 @@ class Employe
         $seniority = ($now->diff($dateHiring))->format('%y');
         return $seniority;
     }
-    public function getSalaire()
+    public function getSalary()
     {
-        return $this->salaire;
+        return $this->salary;
     }
 
     public function getAgency()
