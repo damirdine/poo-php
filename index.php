@@ -3,6 +3,13 @@ require_once ('./classes/agency.php');
 require_once ('./classes/employe.php');
 require_once ('./classes/family.php');
 
+$damirdineChildList = 
+[
+    new Child('hary',15),
+    new Child('madi',18),
+    new Child('rami',7)
+];
+$damirdine = new Employe('ALI SOILIHI', 'Damirdine', '2019-04-12', 'stagiaire', 0, 'formation', $rouenAgency,$damirdineChildList);
 
 $said = new Employe('Mohamed', 'Said', '2016-07-11', 'Tetch Lead', 48000, 'IT', $rouenAgency);
 // $malik = new Employe('Ziad', 'Malik', '2022-03-06', 'Gestionnaire de paye', 28750, 'RH', $rouenAgency);
@@ -35,12 +42,5 @@ function getPayroll($employeList){
     return $payroll;
 }
 
-$damirdineChildList = 
-[
-    new Child('hary',15),
-    new Child('madi',18),
-    new Child('rami',7)
-];
-$damirdine = new Employe('ALI SOILIHI', 'Damirdine', '2019-04-12', 'stagiaire', 0, 'formation', $rouenAgency,$damirdineChildList);
 
-var_dump($damirdine->getChristmasCheck());
+var_dump($nbrOfEmployes);
