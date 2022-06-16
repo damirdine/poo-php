@@ -24,3 +24,11 @@ Nous sommes dans un contexte d’une entreprise d’envergure nationale. Celle-c
 - [x] Savoir  si  celui-ci  peut  disposer  de  chèques vacances ou non.
 
 #### Gestion des chèques Noël des employés par rapport à leurs agences.
+- [x] Afficher dans la console si l’employé a le droit d’avoir des chèques  Noël  (Oui/Non).
+- [x] Et si la réponse est Oui, afficher dans la console combien  de chèques de chaque montant sera distribué à l’employé.
+- [x] 
+
+#### Créer la classe Directeur et gérer le calcul de la prime et le versement pour celui-ci.
+- [x] Créer la classe Directeur qui et un employé comme un autre qui bénéficie d’un statut particulier. 
+- [x] Gérer le calcul de la prime et le versement pour celui-ci. 
+ 

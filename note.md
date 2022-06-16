@@ -14,3 +14,7 @@ function get_instances_of_class($class) {
  };
 $employeList = get_instances_of_class("Employe");
 `
+
+
+Faire attention aux méthodes ajouter à la classe : 
+- ils doivent juste retourner un élément de la classe à la fois
