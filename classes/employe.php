@@ -11,7 +11,7 @@ class Employe
     private  $childList = [];
     private static $nbr;
 
-    public function __construct($name, $firstname, $dateHiring, $fonction, $salary, $service,$agency, $childList)
+    public function __construct($name, $firstname, $dateHiring, $fonction, $salary, $service,$agency, $childList=[])
     {
         $this->name = $name;
         $this->firstname = $firstname;
@@ -74,8 +74,27 @@ class Employe
     }
     public function getChristmasCheck()
     {
-        $ChristmasCheckAmount = count($this->childList);
-        return $ChristmasCheckAmount;
+        $nbrOfChild = count($this->childList);
+        if($nbrOfChild==0){
+            return false;
+        }
+        $ChildCkeckArray=[];
+        foreach($this->childList as $child){
+            if($child->getAge()>=0 && $child->getAge() <=10){
+                $childCheck = 20;
+                array_push($ChildCkeckArray, $childCheck);
+            }
+            else if($child->getAge()>10 && $child->getAge()<=15){
+                $childCheck = 30;
+                array_push($ChildCkeckArray, $childCheck);
+            }
+            else if($child->getAge()>15 && $child->getAge()<=18){
+                $childCheck = 50;
+                array_push($ChildCkeckArray, $childCheck);
+            }
+        }
+        $ChristmasCheckAmount = array_sum($ChildCkeckArray);
+        return [true,$ChristmasCheckAmount ];
     }
     public static function sortByNameFirstname($a, $b)
     {
