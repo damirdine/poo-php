@@ -10,7 +10,7 @@ class Manager extends Employe
         $prime = parent::getSalary() * ($primeSalaryPerCent + $primeSalaryPerYearOfSeniority * $this->getSeniority());
         $prime = round($prime, 2);
         if ($actualDate == $datePrime) {
-            return $getPrime = " l’ordre de transfert de la prime de : $prime € pour $this->firstname a été envoyé à la banque.";
+            return $prime;
         }
         return $prime;
     }

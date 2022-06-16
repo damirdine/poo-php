@@ -49,4 +49,4 @@ function getPayroll($employeList){
 }
 
 
-var_dump($mehdi->getPrime());
+var_dump($amani->getPrime());
